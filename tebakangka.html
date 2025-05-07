@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+
+    <script>
+        const angkaKomputer = Math.floor(Math.random() * 10) + 1;
+        let kesempatan = 3;
+            main = true;
+
+            while (main){
+            for (i = 0; i < kesempatan; i++){
+                angkapPemain = prompt('Masukkan angku: ');
+                
+                if (angkaKomputer == angkapPemain){
+                    alert('Selamat Anda menang!');
+                    break;
+                } else if (i < kesempatan - 1){
+                    if (angkapPemain < angkaKomputer){
+                        alert('Angkamu terlalu kecil!');
+                    } else {
+                        alert('Angkamu terlalu besar!');
+                    }
+                } else {
+                    alert('Game over!');
+                }
+            }
+
+            main = confirm('Mau main lagi?');
+        }
+    </script>
+</body>
+</html>

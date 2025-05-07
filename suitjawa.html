@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+
+    <script>
+        var tanya = true;
+
+        while (tanya){
+            // Menangkap pilihan orang
+            var pilihanOrang = prompt('Pilih salah satu: gajah, semut, orang');
+
+            // Menangkap pilihan computer
+            var pilihanComputer = Math.random();
+                hasil = '';
+            if (pilihanComputer < 0.34) {
+                pilihanComputer = 'gajah';
+            } else if (pilihanComputer > 0.34 && pilihanComputer < 0.67 ){
+                pilihanComputer = 'semut';
+            } else {
+                pilihanComputer = 'orang';
+            }
+
+            if (pilihanComputer == pilihanOrang){
+                hasil = 'Seri';
+                alert(hasil);
+            } else if (pilihanOrang == 'gajah'){
+                hasil = (pilihanComputer == 'orang') ? 'Menang' : 'Kalah';
+                alert(hasil);
+            } else if (pilihanOrang == 'orang') {
+                hasil = (pilihanComputer == 'semut') ? 'Menang' : 'Kalah';
+                alert(hasil);
+            } else if (pilihanOrang == 'semut'){
+                hasil = (pilihanComputer == 'gajah') ? 'Menang' : 'Kalah';
+                alert(hasil);   
+            } else {
+                alert('Masukan yang diberikan salah!');
+            }
+
+            console.log(pilihanOrang);
+            console.log(pilihanComputer);
+
+            tanya = confirm('Lagi?');
+        }
+
+
+
+    </script>
+</body>
+</html>

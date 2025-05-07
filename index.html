@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+
+    <script>
+        var nomorAngkot = 1;
+            jumlahAngkot = 10;
+            angkotBaik = 6;
+/****
+        while (nomorAngkot <= jumlahAngkot ){
+            if (nomorAngkot <= angkotBaik ) {
+                console.log("Angkot No. " + nomorAngkot + " beroperasi dengan baik.");
+            } else {
+               console.log("Angkot No. " + nomorAngkot + " tidak beroperasi dengan baik.");
+            }  
+            nomorAngkot++;
+        }
+***/
+        for (nomorAngkot; nomorAngkot <= jumlahAngkot; nomorAngkot++){
+
+            if (nomorAngkot <= angkotBaik ) {
+                console.log("Angkot No. " + nomorAngkot + " beroperasi dengan baik.");
+            } else {
+               console.log("Angkot No. " + nomorAngkot + " tidak beroperasi dengan baik.");
+            }  
+        }
+
+        let s = '';
+            baris = 15;
+
+        for (i = 1; i <= baris; i++){
+            if (i < baris/2){
+                for (j = i; j <= baris; j++){
+                    if (j < baris){
+                        s += ' ';
+                    } else {
+                        for (k = baris - i; k < (baris + i - 1); k++){
+                            s += '*'
+                        }
+                    }
+
+                }
+            } else {
+                for (j = i - 1; j >= 0; j--){
+                    if (j>0){
+                        s += ' ';
+                    } else {
+                        for (k = 0; k <= baris - i + baris - i; k++){
+                            s += '*';
+                        }
+                        
+                    }
+                }
+                
+            }
+            s += '\n';
+        }
+
+
+        for (i = 0; i < baris; i++){
+            if (i < baris/2){ // jika i kurang dari pembagian nilai 'baris'/2
+                for (let j = 0; j < i; j++) {
+                    s += '*';
+                }
+            } else {
+                for (j = 0; j < baris-i; j++ ){
+                    s += '*';
+                }
+            }
+
+            s += '\n';
+        }
+        console.log(s);
+        
+        /***
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < i; j++) {
+                s += '*';
+            }
+            s += '\n';
+        }
+        for (let i = 4; i > 0; i--) {
+            for (let j = 0; j < i; j++) {
+                s += '*';
+            }
+            s += '\n';
+        }
+        console.log(s);
+        ***/
+    </script>
+</body>
+</html>

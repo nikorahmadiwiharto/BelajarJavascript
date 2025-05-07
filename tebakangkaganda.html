@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <script>
+        // Komputer pilih dua angka acak, tidak boleh sama
+        let angka1 = Math.floor(Math.random() * 10) + 1;
+        let angka2;
+        do {
+            angka2 = Math.floor(Math.random() * 10) + 1;
+        } while (angka2 === angka1);
+    
+        const angkaKomputer = [angka1, angka2];
+        const kesempatan = 5;
+        let berhasil = false;
+    
+        console.log("Angka Komputer:", angkaKomputer); // Untuk debugging
+    
+        for (let i = 0; i < kesempatan; i++) {
+            alert(`Kesempatan ke-${i + 1}`);
+    
+            const angkaUser = [
+                parseInt(prompt("Masukkan angka ke-1 (1-10):")),
+                parseInt(prompt("Masukkan angka ke-2 (1-10):"))
+            ];
+    
+            const [a1, a2] = angkaKomputer;
+            const [u1, u2] = angkaUser;
+    
+            // Dua angka dan posisi benar
+            if (u1 === a1 && u2 === a2) {
+                alert("🎯 Dua angka benar dan posisi benar!");
+                berhasil = true;
+                break;
+            }
+    
+            // Dua angka benar tapi posisi terbalik
+            else if (u1 === a2 && u2 === a1) {
+                alert("↔️ Dua angka benar, tapi posisinya terbalik.");
+            }
+    
+            // Satu angka benar & posisi benar
+            else if (
+                (u1 === a1 && u2 !== a2 && u2 !== a1) ||
+                (u2 === a2 && u1 !== a2 && u1 !== a1)
+            ) {
+                alert("✔️ Satu angka benar dan posisinya tepat.");
+            }
+    
+            // Satu angka benar & posisi salah
+            else if (
+                (u1 === a2 && u2 !== a1 && u2 !== a2) ||
+                (u2 === a1 && u1 !== a1 && u1 !== a2)
+            ) {
+                alert("🔁 Satu angka benar tapi posisinya salah.");
+            }
+    
+            // Dua angka benar tapi hanya nilainya cocok, bukan posisi
+            else if (
+                (u1 === a1 || u1 === a2) &&
+                (u2 === a1 || u2 === a2)
+            ) {
+                alert("✔️ Dua angka benar tapi tidak di posisi yang benar.");
+            }
+    
+            // Tidak ada angka yang benar
+            else {
+                alert("❌ Kedua angka salah.");
+            }
+        }
+    
+        if (!berhasil) {
+            alert(`😢 Game Over! Jawaban: ${angkaKomputer[0]} dan ${angkaKomputer[1]}`);
+        }
+    </script>
+    
+</body>
+</html>

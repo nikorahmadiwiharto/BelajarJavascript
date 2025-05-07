@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+
+    <script>
+        function cekPalindrome(kalimat) {
+        // 1. Hapus semua karakter non-huruf dan ubah ke huruf kecil
+        let bersih = kalimat.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+        // 2. Balikkan string yang sudah dibersihkan
+        let dibalik = bersih.split("").reverse().join("");
+
+        // 3. Bandingkan
+        return kalimat = bersih === dibalik ? "benar" : "salah";
+        }
+
+        // Contoh penggunaan
+        console.log(cekPalindrome("wadidaw"));             // benar
+        console.log(cekPalindrome("A man, a plan, a canal, Panama")); // benar
+        console.log(cekPalindrome("Halo Dunia!"));                 // salah
+
+    </script>
+</body>
+</html>
